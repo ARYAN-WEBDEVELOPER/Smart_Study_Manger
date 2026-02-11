@@ -1,9 +1,5 @@
-// GET USER DATA
-// const userData = JSON.parse(localStorage.getItem("smartStudyUser"));
-userData.tasks = userData.tasks || [];
-task.completed = !task.completed;
-localStorage.setItem("smartStudyUser", JSON.stringify(userData));
-
+// USE GLOBAL DATA (DO NOT DECLARE AGAIN)
+const userData = window.userData;
 if (window.updateProgress) updateProgress();
 
 const taskInput = document.getElementById("taskInput");
