@@ -1,0 +1,156 @@
+<!-- Main App -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Study Manager | Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h2>📘 Smart Study Manager</h2>
+   <div>
+    <button id="themeToggle">🌙</button>
+    <script src="js/theme.js"></script>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+  </header>
+
+  <!-- Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li class="nav-item active" data-section="tasks">📋 Tasks</li>
+        <li class="nav-item" data-section="notes">📝 Notes</li>
+        <li class="nav-item" data-section="timer">⏱️ Timer</li>
+        <li class="nav-item" data-section="progress">📊 Progress</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+
+  <!-- TASKS -->
+  <section id="tasks" class="section active-section">
+    <h1>📋 Study Task Manager</h1>
+
+        <!-- Add Task -->
+        <div class="task-input">
+          <input type="text" id="taskInput" placeholder="Enter study task">
+          <button id="addTaskBtn">Add Task</button>
+        </div>
+    
+        <!-- Task Stats -->
+        <div class="task-stats">
+          <p>Total Tasks: <span id="totalTasks">0</span></p>
+          <p>Completed: <span id="completedTasks">0</span></p>
+        </div>
+    
+        <!-- Task List -->
+        <ul id="taskList" class="task-list"></ul>
+  </section>
+
+  <!-- NOTES -->
+  <section id="notes" class="section">
+   <h1>📝 Notes Manager</h1>
+
+         <!-- Add Note -->
+         <div class="note-input">
+           <input type="text" id="noteTitle" placeholder="Note Title">
+           <input type="text" id="noteSubject" placeholder="Subject">
+           <textarea id="noteContent" placeholder="Write your notes here..."></textarea>
+           <button id="addNoteBtn">Save Note</button>
+         </div>
+
+         <div class="export-buttons">
+            <button id="exportTxt">Export TXT</button>
+            <button id="exportPdf">Export PDF</button>
+         </div>
+
+     
+         <!-- Notes List -->
+         <div id="notesList" class="notes-list"></div>
+
+  </section>
+
+  <!-- TIMER -->
+  <section id="timer" class="section">
+    <h1>⏱️ Study Timer (Pomodoro)</h1>
+
+    <div class="timer-card">
+     <h2 id="timerLabel">Study Time</h2>
+      <div id="timerDisplay">25:00</div>
+         
+      <div class="timer-buttons">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+     
+      <div class="timer-stats">
+        <p>Sessions Completed: <span id="sessions">0</span></p>
+        <p>Total Study Time: <span id="totalTime">0</span> mins</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS -->
+  <section id="progress" class="section">
+
+  <h1>📊 Study Progress</h1>
+
+  <div class="progress-cards">
+
+    <div class="progress-card">
+      <h3>Total Tasks</h3>
+      <p id="totalTasksProg">0</p>
+    </div>
+
+    <div class="progress-card">
+      <h3>Completed Tasks</h3>
+      <p id="completedTasksProg">0</p>
+    </div>
+
+    <div class="progress-card">
+      <h3>Pomodoro Sessions</h3>
+      <p id="sessionsProg">0</p>
+    </div>
+
+    <div class="progress-card">
+      <h3>Total Study Time</h3>
+      <p><span id="studyTimeProg">0</span> mins</p>
+    </div>
+
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar-container">
+    <p>Overall Task Completion</p>
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+    <p id="progressPercent">0%</p>
+  </div>
+
+</section>
+
+
+
+</main>
+
+  </div>
+<script src="js/dashboard.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/timer.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/progress.js"></script>
+
+</body>
+</html>
